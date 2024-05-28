@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from 'react';
+import GeneratePdf from './GeneratePdf';
+import PdfViewer from './PdfViewer';
+import Form from './Form';
 
-function App() {
+const App = () => {
+  const [pdfFile, setPdfFile] = useState(null);
+
+  const handlePdfGenerated = (fileUrl) => {
+    setPdfFile(fileUrl);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Form />
+      <GeneratePdf onPdfGenerated={handlePdfGenerated} />
+      {pdfFile && (
+        <>
+          <h2>Generated PDF Preview</h2>
+          <PdfViewer file={pdfFile} />
+        </>
+      )}
     </div>
   );
-}
+};
 
 export default App;
