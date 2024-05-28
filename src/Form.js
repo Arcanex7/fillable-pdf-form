@@ -37,29 +37,27 @@ const Form = () => {
     const input = document.getElementById('form-content');
     const canvas = await html2canvas(input);
     const imgData = canvas.toDataURL('image/png');
-    const pdf = new jsPDF('p', 'mm', 'a4');
-    
-    // Get the dimensions of the image
-    const imgProps = pdf.getImageProperties(imgData);
+    const pdf = new jsPDF();
+    const imgProperties = pdf.getImageProperties(imgData);
     const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = pdf.internal.pageSize.getHeight();
-    const imgWidth = imgProps.width;
-    const imgHeight = imgProps.height;
+    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
 
-    // Calculate the scale factor to fit the image into the PDF page
-    const widthRatio = pdfWidth / imgWidth;
-    const heightRatio = pdfHeight / imgHeight;
-    const scaleFactor = Math.min(widthRatio, heightRatio);
-
-    const scaledWidth = imgWidth * scaleFactor;
-    const scaledHeight = imgHeight * scaleFactor;
-
-    pdf.addImage(imgData, 'PNG', 0, 0, scaledWidth, scaledHeight);
+    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
     pdf.save('fillable_form.pdf');
   };
-
   return (
-    <div id="form-container" style={{ maxWidth: '800px', margin: '0 auto', padding: '20px', border: '1px solid #ccc' }}>
+    <div id="form-container">
+      <header>
+        <img src="path/to/university-logo.png" alt="University Logo" />
+        <div>
+          <h1>Chandigarh University</h1>
+          <p>Pro-Vice Chancellor Academic Affairs</p>
+        </div>
+        <img src="path/to/pro-vc-logo.png" alt="Pro-VC Logo" />
+      </header>
+  
+      <div className="red-border"></div>
+  
       <form id="form-content" onSubmit={handleSubmit}>
         <h2>Club Faculty/Co-Faculty Advisor: Application Form</h2>
         
@@ -69,7 +67,7 @@ const Form = () => {
           <li>Faculty Co-Advisor: Any fresher who has recently joined Chandigarh University (Ph.D not required).</li>
           <li>Required Documents: Updated Resume, Achievement proofs, Coordinator-ship proofs, etc.</li>
         </ul>
-
+  
         <h3>Generic Club Information</h3>
         <div>
           <label>Club Name:</label>
@@ -88,7 +86,7 @@ const Form = () => {
             <input type="radio" name="natureOfClub" value="Social Value and Outreach" onChange={handleChange} /> Social Value and Outreach
           </div>
         </div>
-
+  
         <h3>Faculty Advisor/ Faculty Co-Advisor Details:</h3>
         <div>
           <label>Position Applied For:</label>
@@ -152,8 +150,20 @@ const Form = () => {
         
         <button type="submit">Submit</button>
       </form>
+  
+      <footer>
+        <img src="path/to/university-logo.png" alt="University Logo" />
+        <div>
+          <p>Pro-Vice Chancellor Academic Affairs Office</p>
+          <p>Document Verified</p>
+        </div>
+        <img src="path/to/pro-vc-logo.png" alt="Pro-VC Logo" />
+      </footer>
     </div>
   );
+  
+
+  
 };
 
 export default Form;

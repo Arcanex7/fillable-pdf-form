@@ -1,73 +1,150 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+  position: relative;
+  font-size: 12px; /* Reduce font size */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header, footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px; /* Reduce padding */
+  background-color: #f2f2f2;
 }
-/* src/FacultyAdvisorForm.css */
-h1{
+
+header img, footer img {
+  height: 40px; /* Reduce logo size */
+}
+
+header div, footer div {
+  flex: 1;
   text-align: center;
 }
 
-form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+header div h1, footer div h1 {
+  font-size: 16px; /* Reduce font size */
+  margin: 0;
+}
+
+header div p, footer div p {
+  font-size: 12px; /* Reduce font size */
+  margin: 0;
+}
+
+.red-border {
+  border-top: 2px solid red; /* Reduce border size */
+  border-bottom: 2px solid red;
+  padding: 5px 0; /* Reduce padding */
+  margin: 10px 0; /* Reduce margin */
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 10px; /* Reduce margin */
+  font-size: 16px; /* Reduce font size */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+form h3 {
+  font-size: 14px; /* Reduce font size */
+  font-weight: bold;
+  margin-top: 10px; /* Reduce margin */
+  margin-bottom: 5px; /* Reduce margin */
+}
+
+form ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 10px 0; /* Reduce margin */
+}
+
+form ul li {
+  margin-bottom: 5px;
 }
 
 form div {
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Reduce margin */
 }
 
 form label {
   display: block;
-  margin-bottom: 5px;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 form input[type="text"],
-form input[type="email"],
 form input[type="date"],
+form input[type="email"],
 form input[type="number"],
 form textarea {
-  width: calc(100% - 22px);
-  padding: 10px;
+  width: 100%;
+  padding: 5px; /* Reduce padding */
+  box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
 }
 
 form input[type="radio"] {
-  margin-right: 5px;
+  margin-right: 5px; /* Reduce margin */
 }
 
 form textarea {
   resize: vertical;
-  min-height: 100px;
+  height: 60px; /* Reduce height */
 }
 
-form button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff;
+form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 8px; /* Reduce padding */
+  background-color: #4CAF50;
+  color: white;
   border: none;
   border-radius: 4px;
+  font-size: 14px; /* Reduce font size */
   cursor: pointer;
 }
 
-form button:hover {
-  background-color: #0056b3;
+form button[type="submit"]:hover {
+  background-color: #45a049;
 }
 
+#form-content {
+  border: 1px solid #ccc;
+  padding: 10px; /* Reduce padding */
+  border-radius: 5px;
+}
+
+#form-content div {
+  display: flex;
+  flex-direction: column;
+}
+
+#form-content div input[type="radio"] {
+  display: inline;
+  margin: 0 5px 0 0; /* Reduce margin */
+}
+
+#form-content div label {
+  margin-bottom: 5px;
+}
+
+#form-content div div {
+  display: flex;
+  align-items: center;
+}
+
+@media print {
+  #form-container {
+    border: none;
+  }
+
+  form button[type="submit"] {
+    display: none;
+  }
+}
