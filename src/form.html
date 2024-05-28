@@ -5,37 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Club Faculty Advisor Application Form</title>
     <style>
-        body {
+           body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .pdf-page {
+            width: 210mm;
+            height: 297mm;
+            padding: 10mm;
+            box-sizing: border-box;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
         .header, .footer {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 5mm;
         }
         .header img, .footer img {
-            width: 100px;
+            width: 50px;
         }
         .content {
             border: 1px solid #000;
-            padding: 20px;
+            padding: 5mm;
+            font-size: 12px;
         }
         .content h1 {
             text-align: center;
             text-decoration: underline;
+            font-size: 16px;
         }
         .form-section {
-            margin-bottom: 20px;
+            margin-bottom: 5mm;
         }
         .form-section label {
             display: block;
-            margin: 5px 0;
+            margin: 2mm 0;
         }
         .form-section input, .form-section textarea, .form-section select {
             width: 100%;
-            padding: 5px;
-            margin: 5px 0;
+            padding: 3px;
+            margin: 2mm 0;
             box-sizing: border-box;
+            font-size: 12px;
         }
         .signatures {
             display: flex;
@@ -46,96 +64,99 @@
         }
         .footer-text {
             font-style: italic;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <img src="logo1.png" alt="Logo 1">
-    <img src="logo2.png" alt="Logo 2">
-    <h1>CLUB FACULTY/CO-FACULTY ADVISOR: APPLICATION FORM</h1>
-</div>
-
-<div class="content">
-    <div class="form-section">
-        <h2>General Points</h2>
-        <p><strong>1. Eligibility:</strong></p>
-        <ul>
-            <li>Faculty Advisor: Minimum of 1-year experience in Chandigarh University [Ph.D not required].</li>
-            <li>Faculty Co-Advisor: Any Fresher who has recently joined Chandigarh University [Ph.D not required].</li>
-        </ul>
-        <p><strong>2. Required Documents:</strong> Updated Resume, Achievement proofs, Coordinator-ship proofs, etc.</p>
-        <p><strong>3. Club Information:</strong></p>
-        <label for="club-name">Club Name:</label>
-        <input type="text" id="club-name" name="club-name">
-        <label for="applied-date">Applied Date (DD/MM/YYYY):</label>
-        <input type="text" id="applied-date" name="applied-date">
-        <label for="club-nature">Nature of Club:</label>
-        <select id="club-nature" name="club-nature">
-            <option value="domain-specific">Domain Specific (Skill Based)</option>
-            <option value="hackathon">Hackathon and Challenge</option>
-            <option value="invention">Invention and Incubation</option>
-            <option value="social-value">Social Value and Outreach</option>
-        </select>
+<div class="pdf-page">
+    <div class="header">
+        <img src="logo1.png" alt="Logo 1">
+        <img src="logo2.png" alt="Logo 2">
+        <h1>CLUB FACULTY/CO-FACULTY ADVISOR: APPLICATION FORM</h1>
     </div>
 
-    <div class="form-section">
-        <h2>Faculty Advisor/ Faculty Co-Advisor Details</h2>
-        <label for="position-applied">Position Applied For:</label>
-        <select id="position-applied" name="position-applied">
-            <option value="advisor">Faculty Advisor</option>
-            <option value="co-advisor">Faculty Co-Advisor</option>
-        </select>
-        <label for="faculty-name">Faculty Name /EID:</label>
-        <input type="text" id="faculty-name" name="faculty-name">
-        <label for="email">E-Mail ID:</label>
-        <input type="email" id="email" name="email">
-        <label for="mobile">Mobile Number:</label>
-        <input type="text" id="mobile" name="mobile">
-        <label for="designation">Designation:</label>
-        <input type="text" id="designation" name="designation">
-        <label for="department">Department/Institute:</label>
-        <input type="text" id="department" name="department">
-        <label for="experience">Prior Experience in Co-Curricular Domain (Years):</label>
-        <input type="text" id="experience" name="experience">
-        <label for="vision">Proposed Vision for Club:</label>
-        <textarea id="vision" name="vision" rows="3"></textarea>
-        <label for="achievements">Previous Related Achievements (Certifications/ Recognitions/ Patents/ Research papers [SCI, SCOPUS]/ Leadership):</label>
-        <textarea id="achievements" name="achievements" rows="3"></textarea>
-        <label for="specialization">Specialization:</label>
-        <input type="text" id="specialization" name="specialization">
-        <label for="flagship-event">Proposed Flagship Event:</label>
-        <input type="text" id="flagship-event" name="flagship-event">
-    </div>
-
-    <div class="signatures">
-        <div>
-            <label for="nominated-by">Nominated By:</label>
-            <input type="text" id="nominated-by" name="nominated-by">
-            <label for="nomination">Nomination [Yes/No]:</label>
-            <input type="text" id="nomination" name="nomination">
+    <div class="content">
+        <div class="form-section">
+            <h2>General Points</h2>
+            <p><strong>1. Eligibility:</strong></p>
+            <ul>
+                <li>Faculty Advisor: Minimum of 1-year experience in Chandigarh University [Ph.D not required].</li>
+                <li>Faculty Co-Advisor: Any Fresher who has recently joined Chandigarh University [Ph.D not required].</li>
+            </ul>
+            <p><strong>2. Required Documents:</strong> Updated Resume, Achievement proofs, Coordinator-ship proofs, etc.</p>
+            <p><strong>3. Club Information:</strong></p>
+            <label for="club-name">Club Name:</label>
+            <input type="text" id="club-name" name="club-name">
+            <label for="applied-date">Applied Date (DD/MM/YYYY):</label>
+            <input type="text" id="applied-date" name="applied-date">
+            <label for="club-nature">Nature of Club:</label>
+            <select id="club-nature" name="club-nature">
+                <option value="domain-specific">Domain Specific (Skill Based)</option>
+                <option value="hackathon">Hackathon and Challenge</option>
+                <option value="invention">Invention and Incubation</option>
+                <option value="social-value">Social Value and Outreach</option>
+            </select>
         </div>
-        <div>
-            <p>Name</p>
+
+        <div class="form-section">
+            <h2>Faculty Advisor/ Faculty Co-Advisor Details</h2>
+            <label for="position-applied">Position Applied For:</label>
+            <select id="position-applied" name="position-applied">
+                <option value="advisor">Faculty Advisor</option>
+                <option value="co-advisor">Faculty Co-Advisor</option>
+            </select>
+            <label for="faculty-name">Faculty Name /EID:</label>
+            <input type="text" id="faculty-name" name="faculty-name">
+            <label for="email">E-Mail ID:</label>
+            <input type="email" id="email" name="email">
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile">
+            <label for="designation">Designation:</label>
+            <input type="text" id="designation" name="designation">
+            <label for="department">Department/Institute:</label>
+            <input type="text" id="department" name="department">
+            <label for="experience">Prior Experience in Co-Curricular Domain (Years):</label>
+            <input type="text" id="experience" name="experience">
+            <label for="vision">Proposed Vision for Club:</label>
+            <textarea id="vision" name="vision" rows="3"></textarea>
+            <label for="achievements">Previous Related Achievements (Certifications/ Recognitions/ Patents/ Research papers [SCI, SCOPUS]/ Leadership):</label>
+            <textarea id="achievements" name="achievements" rows="3"></textarea>
+            <label for="specialization">Specialization:</label>
+            <input type="text" id="specialization" name="specialization">
+            <label for="flagship-event">Proposed Flagship Event:</label>
+            <input type="text" id="flagship-event" name="flagship-event">
+        </div>
+
+        <div class="signatures">
+            <div>
+                <label for="nominated-by">Nominated By:</label>
+                <input type="text" id="nominated-by" name="nominated-by">
+                <label for="nomination">Nomination [Yes/No]:</label>
+                <input type="text" id="nomination" name="nomination">
+            </div>
+            <div>
+                <p>Name</p>
+                <p>Signature</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-text">
+            <p>[For Pro-Vice Chancellor Academic Affairs Office Use Only]</p>
+            <p>Document Verified</p>
+            <p>Registration Code:</p>
+            <p>Approved/ Not Approved</p>
             <p>Signature</p>
+            <p>PVC Academic Affairs</p>
+            <p>PVC- ACADEMIC AFFAIRS Team</p>
+            <p>Professionalism. Efficiency. Humility</p>
         </div>
+        <img src="logo-footer.png" alt="Footer Logo">
+        <p>Ref No. PRO-VC/2024-25/CL-F/</p>
     </div>
-</div>
-
-<div class="footer">
-    <div class="footer-text">
-        <p>[For Pro-Vice Chancellor Academic Affairs Office Use Only]</p>
-        <p>Document Verified</p>
-        <p>Registration Code:</p>
-        <p>Approved/ Not Approved</p>
-        <p>Signature</p>
-        <p>PVC Academic Affairs</p>
-        <p>PVC- ACADEMIC AFFAIRS Team</p>
-        <p>Professionalism. Efficiency. Humility</p>
-    </div>
-    <img src="logo-footer.png" alt="Footer Logo">
-    <p>Ref No. PRO-VC/2024-25/CL-F/</p>
 </div>
 
 </body>
